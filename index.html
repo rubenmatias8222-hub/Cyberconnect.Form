@@ -1,169 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberConnect Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Login</title>
 
-    <link rel="stylesheet" href="style.css">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: white;
+}
+
+/* Background glow effect */
+.glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 255, 170, 0.15);
+  filter: blur(100px);
+  border-radius: 50%;
+  top: 10%;
+}
+
+/* Login box */
+.login-container {
+  position: relative;
+  width: 350px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00ffae;
+}
+
+.input-box {
+  margin-bottom: 15px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.input-box input::placeholder {
+  color: #aaa;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #00ffae;
+  color: #00110d;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00c98a;
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #aaa;
+}
+</style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">CyberConnect</div>
+<div class="glow"></div>
 
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<div class="login-container">
+  <h2>SECURE ACCESS</h2>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Ruben Matias</h1>
+  <div class="input-box">
+    <input type="text" placeholder="Username">
+  </div>
 
-            <p class="subtitle">
-                Networking & Cybersecurity Enthusiast
-            </p>
+  <div class="input-box">
+    <input type="password" placeholder="Password">
+  </div>
 
-            <p class="description">
-                Passionate about networking, cybersecurity, backend systems,
-                Linux environments, and modern web technologies.
-            </p>
+  <button>LOGIN</button>
 
-            <a href="#contact" class="btn btn-primary">
-                Contact Me
-            </a>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2>About Me</h2>
-
-            <p>
-                I am currently studying networking and cybersecurity while
-                building real-world projects using FastAPI, GitHub, Render,
-                and frontend technologies.
-            </p>
-
-            <p>
-                I enjoy learning backend systems, APIs, Linux, cloud deployment,
-                and security concepts.
-            </p>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-
-            <div class="skills-grid">
-                <div class="skill">Cybersecurity</div>
-                <div class="skill">Networking</div>
-                <div class="skill">FastAPI</div>
-                <div class="skill">Python</div>
-                <div class="skill">Linux</div>
-                <div class="skill">GitHub</div>
-                <div class="skill">Render</div>
-                <div class="skill">HTML/CSS</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-
-            <div class="projects-grid">
-
-                <div class="project-card">
-                    <h3>CyberConnect Backend</h3>
-
-                    <p>
-                        FastAPI backend deployed on Render with API integration.
-                    </p>
-
-                    <a href="#" class="btn btn-secondary">
-                        View Project
-                    </a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Frontend Portfolio</h3>
-
-                    <p>
-                        Responsive portfolio website hosted on GitHub Pages.
-                    </p>
-
-                    <a href="#" class="btn btn-secondary">
-                        View Project
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-
-            <h2>Contact Me</h2>
-
-            <div class="contact-content">
-
-                <div class="contact-form">
-
-                    <form id="contactForm">
-
-                        <div class="form-group">
-                            <label>Full Name</label>
-                            <input id="name" type="text" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input id="email" type="email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Message</label>
-                            <textarea id="message" rows="5" required></textarea>
-                        </div>
-
-                        <button class="btn btn-primary" type="submit">
-                            Send Message
-                        </button>
-
-                    </form>
-
-                    <div id="response"></div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>© 2026 Ruben Matias | CyberConnect</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <div class="footer-text">
+    Encrypted session • Cybersecurity system
+  </div>
+</div>
 
 </body>
 </html>
