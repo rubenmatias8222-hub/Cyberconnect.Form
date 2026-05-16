@@ -1,162 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cybersecurity Resource Hub</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0b1220;
-  color: white;
-}
-
-/* HEADER */
-header {
-  background: #0f1a2e;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header h1 {
-  color: #00ffae;
-}
-
-/* CONTENT */
-.container {
-  padding: 30px;
-}
-
-.card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 20px;
-  margin-top: 15px;
-  border-radius: 10px;
-}
-
-/* PREMIUM TAG */
-.premium {
-  border-left: 4px solid #00ffae;
-}
-
-/* BUTTON */
-button {
-  background: #00ffae;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-box {
-  background: #111a2e;
-  padding: 25px;
-  border-radius: 10px;
-  width: 320px;
-  border: 1px solid #00ffae;
-  text-align: center;
-}
-
-.modal-box h2 {
-  color: #00ffae;
-}
-
-.close {
-  float: right;
-  cursor: pointer;
-  color: white;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberConnect Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <h1>CyberSec Hub</h1>
-  <button onclick="alert('Free resources coming soon!')">Free Tools</button>
-</header>
+    <h1>Contact Form</h1>
 
-<div class="container">
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <textarea id="message" placeholder="Message" required></textarea>
 
-  <h2>Resources</h2>
+        <button type="submit">Send</button>
+    </form>
 
-  <div class="card">
-    🟢 Free Resource: Basic Networking Guide
-  </div>
+    <div id="response"></div>
 
-  <div class="card premium">
-    🔒 Premium Resource: Advanced Cybersecurity Toolkit
-    <br><br>
-    <button onclick="openSubscribe()">Access Premium</button>
-  </div>
+    <script src="script.js"></script>
 
-  <div class="card premium">
-    🔒 Premium Resource: Ethical Hacking Lab Setup
-    <br><br>
-    <button onclick="openSubscribe()">Access Premium</button>
-  </div>
-
-</div>
-
-<!-- SUBSCRIBE MODAL -->
-<div id="subscribeModal" class="modal">
-  <div class="modal-box">
-    <span class="close" onclick="closeSubscribe()">✖</span>
-
-    <h2>Premium Access</h2>
-    <p>This content is for subscribers only.</p>
-
-    <p style="font-size: 13px; color: #aaa;">
-      You can unlock all cybersecurity resources by subscribing.
-    </p>
-
-    <button onclick="fakeSubscribe()">Subscribe Now</button>
-  </div>
-</div>
-
-<script>
-function openSubscribe() {
-  document.getElementById("subscribeModal").style.display = "flex";
-}
-
-function closeSubscribe() {
-  document.getElementById("subscribeModal").style.display = "none";
-}
-
-function fakeSubscribe() {
-  alert("This is where you will connect Gumroad / payment system later 🚀");
-  closeSubscribe();
-}
-</script>
-<!-- PREMIUM SUBSCRIBE MODAL -->
-<div id="premiumModal" class="modal">
-  <div class="modal-box">
-    <span class="close" onclick="closePremium()">✖</span>
-
-    <h2>Premium Access</h2>
-    <p>This feature is part of subscriber-only content.</p>
-
-    <button onclick="subscribeNow()">Subscribe</button>
-  </div>
-</div>
 </body>
 </html>
