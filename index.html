@@ -3,90 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Secure Login</title>
+<title>Secure Resource Dashboard</title>
 
 <style>
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
 }
 
 body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: radial-gradient(circle at top, #0f172a, #020617);
+  background: #0b1220;
   color: white;
 }
 
-/* Background glow effect */
-.glow {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: rgba(0, 255, 170, 0.15);
-  filter: blur(100px);
-  border-radius: 50%;
-  top: 10%;
+/* HEADER */
+header {
+  padding: 20px;
+  background: #0f1a2e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Login box */
-.login-container {
-  position: relative;
-  width: 350px;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
-.login-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
+header h1 {
   color: #00ffae;
 }
 
-.input-box {
-  margin-bottom: 15px;
+button {
+  cursor: pointer;
 }
 
-.input-box input {
+/* MAIN DASHBOARD */
+.container {
+  padding: 40px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* LOCKED CONTENT STYLE */
+.locked {
+  filter: blur(3px);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* BUTTON */
+.access-btn {
+  background: #00ffae;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* MODAL BACKDROP */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 12px;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+/* MODAL BOX */
+.modal-content {
+  background: #111a2e;
+  padding: 25px;
+  border-radius: 10px;
+  width: 300px;
+  border: 1px solid #00ffae;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  color: #00ffae;
+}
+
+.modal-content input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 6px;
   border: none;
   outline: none;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.1);
-  color: white;
 }
 
-.input-box input::placeholder {
-  color: #aaa;
-}
-
-button {
+.login-btn {
   width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
   background: #00ffae;
-  color: #00110d;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
   font-weight: bold;
+}
+
+.close-btn {
+  background: transparent;
+  color: white;
+  border: none;
+  float: right;
+  font-size: 18px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-button:hover {
-  background: #00c98a;
-}
-
-.footer-text {
-  text-align: center;
+.status {
   margin-top: 10px;
   font-size: 12px;
   color: #aaa;
@@ -96,25 +127,66 @@ button:hover {
 
 <body>
 
-<div class="glow"></div>
+<header>
+  <h1>CyberSec Dashboard</h1>
+  <button class="access-btn" onclick="openLogin()">Access Resources</button>
+</header>
 
-<div class="login-container">
-  <h2>SECURE ACCESS</h2>
+<div class="container">
 
-  <div class="input-box">
-    <input type="text" placeholder="Username">
+  <h2>System Overview</h2>
+
+  <div id="secureContent" class="locked">
+    <div class="card">🔐 Threat Intelligence Logs</div>
+    <div class="card">📊 Network Traffic Monitor</div>
+    <div class="card">🛡️ Firewall Status Panel</div>
+    <div class="card">📡 Live Attack Detection System</div>
   </div>
 
-  <div class="input-box">
-    <input type="password" placeholder="Password">
-  </div>
+</div>
 
-  <button>LOGIN</button>
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
 
-  <div class="footer-text">
-    Encrypted session • Cybersecurity system
+    <button class="close-btn" onclick="closeLogin()">✖</button>
+
+    <h2>Secure Login</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button class="login-btn" onclick="login()">Login</button>
+
+    <div class="status" id="statusText"></div>
   </div>
 </div>
+
+<script>
+// OPEN MODAL
+function openLogin() {
+  document.getElementById("loginModal").style.display = "flex";
+}
+
+// CLOSE MODAL
+function closeLogin() {
+  document.getElementById("loginModal").style.display = "none";
+}
+
+// SIMPLE LOGIN LOGIC (frontend demo only)
+function login() {
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+
+  if(user === "admin" && pass === "1234") {
+    document.getElementById("secureContent").classList.remove("locked");
+    document.getElementById("statusText").innerText = "Access granted!";
+    closeLogin();
+  } else {
+    document.getElementById("statusText").innerText = "Invalid credentials!";
+  }
+}
+</script>
 
 </body>
 </html>
