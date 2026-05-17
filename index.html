@@ -2,38 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CyberConnect</title>
+  <title>CyberConnect | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="container">
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">CyberConnect</div>
 
-    <h1>CyberConnect Dashboard</h1>
-
-    <div class="card">
-      <h2>Contact</h2>
-      <input id="name" placeholder="Your name">
-      <textarea id="message" placeholder="Your message"></textarea>
-      <button onclick="sendContact()">Send</button>
-    </div>
-
-    <div class="card">
-      <h2>Upload</h2>
-      <input type="file" id="file">
-      <button onclick="uploadFile()">Upload</button>
-    </div>
-
-    <div class="card">
-      <h2>Content</h2>
-      <button onclick="loadContent()">Load Content</button>
-      <pre id="output"></pre>
-    </div>
-
+  <div class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </div>
 
-  <script src="app.js"></script>
+  <a class="cv-btn" href="cv.pdf" download>Download CV</a>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>CyberConnect Portfolio</h1>
+    <p>Cybersecurity • Networking • Development</p>
+  </header>
+
+  <!-- SKILLS -->
+  <section id="skills" class="grid">
+
+    <div class="card">
+      <h2>🛡 Cybersecurity</h2>
+      <p>Threat detection, spoofing analysis, system security.</p>
+    </div>
+
+    <div class="card">
+      <h2>🌐 Networking</h2>
+      <p>Routing, infrastructure, Linux networking, VPNs.</p>
+    </div>
+
+    <div class="card">
+      <h2>💻 Development</h2>
+      <p>Python, APIs, backend systems, automation tools.</p>
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="card">
+    <h2>🚀 Projects</h2>
+    <p>✔ Cybersecurity Toolkit</p>
+    <p>✔ Network Scanner (Python)</p>
+    <p>✔ API Security Lab</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="card">
+    <h2>📩 Contact</h2>
+
+    <input id="name" placeholder="Your name">
+    <input id="email" type="email" placeholder="Your email">
+    <textarea id="message" placeholder="Your message"></textarea>
+
+    <button onclick="sendContact()">Send Message</button>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 CyberConnect. All rights reserved.</p>
+  <p>Owner: Ruben Matias</p>
+</footer>
+
+<script src="app.js"></script>
 
 </body>
 </html>
