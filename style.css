@@ -1,34 +1,97 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #050816;
+  color: #e2e8f0;
+}
+
+/* NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: rgba(10, 15, 30, 0.9);
   padding: 15px 25px;
-
-  background: rgba(5, 8, 22, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #1f2937;
   z-index: 1000;
 }
-.nav-links a {
-  color: #38bdf8;  /* bright cyber blue */
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: 500;
-}
 
-.nav-links a:hover {
+.logo {
   color: #00e5ff;
+  font-weight: bold;
+  font-size: 18px;
 }
-<footer class="footer">
-  <p>© 2026 CyberConnect. All rights reserved.</p>
-  <p>Owner: Ruben Matias</p>
-</footer>
 
-<script src="app.js"></script>
+.nav-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
 
-</body>
-</html>
+.cv-btn {
+  background: #00e5ff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: black;
+  text-decoration: none;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* CARDS */
+.card {
+  background: #0f172a;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+
+  /* animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s forwards;
+}
+
+.card:hover {
+  box-shadow: 0 0 15px #00e5ff;
+}
+
+/* INPUTS */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  background: #020617;
+  color: white;
+  border: 1px solid #1f2937;
+}
+
+/* BUTTON */
+button {
+  background: #00e5ff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+button:hover {
+  background: #00bcd4;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
