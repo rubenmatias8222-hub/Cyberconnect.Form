@@ -1,13 +1,39 @@
-{
-  "name": "ruben-matias-portfolio",
-  "version": "1.0.0",
-  "description": "Professional portfolio website for Ruben Matias - Frontend Developer",
-  "main": "index.html",
-  "scripts": {
-    "start": "python3 -m http.server 8000",
-    "deploy": "echo 'Ready for deployment to GitHub Pages, Netlify, or Vercel'"
-  },
-  "keywords": ["portfolio", "frontend", "web-development"],
-  "author": "Ruben Matias",
-  "license": "MIT"
+const API = "http://127.0.0.1:8000";
+
+// CONTACT
+function sendContact() {
+  fetch(`${API}/contact`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: document.getElementById("name").value,
+      message: document.getElementById("message").value
+    })
+  })
+  .then(res => res.json())
+  .then(data => alert("Message sent!"));
+}
+
+// UPLOAD
+function uploadFile() {
+  const file = document.getElementById("file").files[0];
+  const formData = new FormData();
+  formData.append("file", file);
+
+  fetch(`${API}/upload`, {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => alert("Uploaded!"));
+}
+
+// CONTENT
+function loadContent() {
+  fetch(`${API}/content`)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("output").textContent =
+        JSON.stringify(data, null, 2);
+    });
 }
