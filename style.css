@@ -23,3 +23,12 @@
 .nav-links a:hover {
   color: #00e5ff;
 }
+<footer class="footer">
+  <p>© 2026 CyberConnect. All rights reserved.</p>
+  <p>Owner: Ruben Matias</p>
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
