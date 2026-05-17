@@ -13,3 +13,13 @@
   border-bottom: 1px solid rgba(56, 189, 248, 0.2);
   z-index: 1000;
 }
+.nav-links a {
+  color: #38bdf8;  /* bright cyber blue */
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #00e5ff;
+}
