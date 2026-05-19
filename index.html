@@ -60,19 +60,16 @@
 
   <!-- CONTACT -->
   <<!-- CONTACT -->
-<section id="contact" class="card">
-  <h2>📩 Contact</h2>
+<!-- CONTACT -->
+  <section id="contact" class="card">
+    <h2>📩 Contact</h2>
 
-  <!-- Wrap inputs in a form tag and add name attributes -->
-  <form id="contactForm">
-    <input id="name" name="from_name" placeholder="Your name" required>
-    <input id="email" name="reply_to" type="email" placeholder="Your email" required>
-    <textarea id="message" name="message" placeholder="Your message" required></textarea>
+    <input id="name" placeholder="Your name">
+    <input id="email" type="email" placeholder="Your email">
+    <textarea id="message" placeholder="Your message"></textarea>
 
-    <!-- Changed to a standard submit button -->
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+    <button type="button" onclick="sendContact()">Send Message</button>
+  </section>
 </div>
 
 <!-- FOOTER -->
