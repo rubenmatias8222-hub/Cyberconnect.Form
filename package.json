@@ -1,3 +1,2 @@
-console.log("🔥 APP.JS EXECUTING NOW");
-alert("🔥 JS IS RUNNING");
-document.body.style.background = "yellow";
+alert("JS LOADED FROM SERVER");
+console.log("SERVER JS ACTIVE");
