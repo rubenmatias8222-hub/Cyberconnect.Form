@@ -1,5 +1,6 @@
+alert("JS UPDATED AND RUNNING");
+console.log("NEW VERSION LOADED");
 const API = "http://127.0.0.1:8000";
-
 // ========================
 // CONTACT FORM
 // ========================
