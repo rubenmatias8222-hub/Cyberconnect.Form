@@ -1,5 +1,5 @@
-alert("JS UPDATED AND RUNNING");
-console.log("NEW VERSION LOADED");
+console.log("🔥 NEW JS FILE LOADED");
+alert("JS IS NOW RUNNING (NO CACHE)");
 const API = "http://127.0.0.1:8000";
 // ========================
 // CONTACT FORM
